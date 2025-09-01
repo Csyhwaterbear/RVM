@@ -1,0 +1,74 @@
+V "GNAT Lib v14"
+M P W=b
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+
+U rvm%b			rvm.adb			95ca9134 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20240801081713 76789da1 ada%s
+D a-except.ads		20240801081713 e7970cd9 ada.exceptions%s
+D a-flteio.ads		20240801081713 e18a47a0 ada.float_text_io%s
+D a-ioexce.ads		20240801081713 40018c65 ada.io_exceptions%s
+D a-numeri.ads		20240801081713 84bea7a3 ada.numerics%s
+D a-stream.ads		20240801081713 119b8fb3 ada.streams%s
+D a-string.ads		20240801081713 90ac6797 ada.strings%s
+D a-sttebu.ads		20240801081713 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20240801081713 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20240801081713 9eaa38c6 ada.tags%s
+D a-textio.ads		20240801081713 34ef47de ada.text_io%s
+D a-tiflio.ads		20240801081713 48a0360d ada.text_io.float_io%s
+D a-unccon.ads		20240801081713 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20240801081713 9111f9c1 interfaces%s
+D i-cstrea.ads		20240801081713 ffd01b9d interfaces.c_streams%s
+D rvm.adb		20250828013457 c41136e9 rvm%b
+D system.ads		20240801081714 d0bef732 system%s
+D s-crtl.ads		20240801081713 beb39b9e system.crtl%s
+D s-exctab.ads		20240801081713 91bef6ef system.exception_table%s
+D s-ficobl.ads		20240801081713 dc5161d4 system.file_control_block%s
+D s-parame.ads		20250315014742 a1aeab5c system.parameters%s
+D s-putima.ads		20240801081713 17291fe4 system.put_images%s
+D s-secsta.ads		20240801081713 578279f5 system.secondary_stack%s
+D s-soflin.ads		20240801081713 df77073e system.soft_links%s
+D s-stache.ads		20240801081713 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20240801081713 1c9580f6 system.standard_library%s
+D s-stoele.ads		20240801081713 ccded4e8 system.storage_elements%s
+D s-traent.ads		20240801081713 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20240801081713 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20240801081714 d9032363 system.wch_con%s
+G a e
+G c Z b b [rvm standard 9 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 16|1r6 2r6 3r6 5r5 6r5 7r5
+X 3 a-flteio.ads
+20K13*Float_Text_IO[12|46] 16|3w10 7r9
+X 5 a-numeri.ads
+16K13*Numerics 35e17 16|2w10 6r9
+21N4*Pi 16|43r28 44r28 45r28
+X 11 a-textio.ads
+58K13*Text_IO 785e16 16|1w10 5r9
+565U14*Put_Line 16|61s9
+X 16 rvm.adb
+9U11*rvm 9b11 62l5 62t8
+10A14 F_1D_Array(float)<integer>
+11A14 F_4D_Array(float)<integer><integer><integer><integer>
+17R14 Field 33e19 35r34
+18i17 Nx{integer} 37m19
+19i17 Ny{integer} 38m19
+20i17 Nz{integer} 39m19
+21f17 Re{float} 40m19
+22f17 t{float} 41m19
+23f17 t_end{float} 42m19
+24f17 Lx{float} 43m19
+25f17 Ly{float} 44m19
+26f17 Lz{float} 45m19
+35U19 TGV 35b19 35=23 58t12
+35r23 F{17R14} 37m17 38m17 39m17 40m17 41m17 42m17 43m17 44m17 45m17
+
