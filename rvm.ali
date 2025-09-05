@@ -3,21 +3,38 @@ M P W=b
 P ZX
 
 RN
+RV NO_ALLOCATORS
 RV NO_FLOATING_POINT
 RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 
-U rvm%b			rvm.adb			95ca9134 NE OO SU IL
+U rvm%b			rvm.adb			d5c3e6ce NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
 W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.unchecked_deallocation%s
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_flt%s	s-imgflt.ads		s-imgflt.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
 
 D ada.ads		20240801081713 76789da1 ada%s
 D a-except.ads		20240801081713 e7970cd9 ada.exceptions%s
 D a-flteio.ads		20240801081713 e18a47a0 ada.float_text_io%s
 D a-ioexce.ads		20240801081713 40018c65 ada.io_exceptions%s
 D a-numeri.ads		20240801081713 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20240801081713 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240801081713 5506716e ada.numerics.generic_elementary_functions%s
 D a-stream.ads		20240801081713 119b8fb3 ada.streams%s
 D a-string.ads		20240801081713 90ac6797 ada.strings%s
 D a-sttebu.ads		20240801081713 f1ad67a2 ada.strings.text_buffers%s
@@ -26,14 +43,24 @@ D a-tags.ads		20240801081713 9eaa38c6 ada.tags%s
 D a-textio.ads		20240801081713 34ef47de ada.text_io%s
 D a-tiflio.ads		20240801081713 48a0360d ada.text_io.float_io%s
 D a-unccon.ads		20240801081713 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20240801081713 c3a8ac65 ada.unchecked_deallocation%s
 D interfac.ads		20240801081713 9111f9c1 interfaces%s
 D i-cstrea.ads		20240801081713 ffd01b9d interfaces.c_streams%s
-D rvm.adb		20250828013457 c41136e9 rvm%b
+D rvm.adb		20250903204132 4458d06a rvm%b
 D system.ads		20240801081714 d0bef732 system%s
+D s-conca2.ads		20240801081713 b5fb73f7 system.concat_2%s
+D s-conca4.ads		20240801081713 33f85f3e system.concat_4%s
 D s-crtl.ads		20240801081713 beb39b9e system.crtl%s
 D s-exctab.ads		20240801081713 91bef6ef system.exception_table%s
 D s-ficobl.ads		20240801081713 dc5161d4 system.file_control_block%s
+D s-imagei.ads		20240801081713 5e131ce0 system.image_i%s
+D s-imager.ads		20240801081713 45c7157d system.image_r%s
+D s-imageu.ads		20240801081713 b0b50650 system.image_u%s
+D s-imgflt.ads		20240801081713 d12816b5 system.img_flt%s
+D s-imgint.ads		20240801081713 67e4edfb system.img_int%s
+D s-imguns.ads		20240801081713 c4e23690 system.img_uns%s
 D s-parame.ads		20250315014742 a1aeab5c system.parameters%s
+D s-powflt.ads		20240801081713 a51ab9b8 system.powten_flt%s
 D s-putima.ads		20240801081713 17291fe4 system.put_images%s
 D s-secsta.ads		20240801081713 578279f5 system.secondary_stack%s
 D s-soflin.ads		20240801081713 df77073e system.soft_links%s
@@ -42,33 +69,92 @@ D s-stalib.ads		20240801081713 1c9580f6 system.standard_library%s
 D s-stoele.ads		20240801081713 ccded4e8 system.storage_elements%s
 D s-traent.ads		20240801081713 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		20240801081713 fa2a7f59 system.unsigned_types%s
+D s-valspe.ads		20240801081714 b0fcd073 system.val_spec%s
+D s-vaispe.ads		20240801081714 8280550e system.value_i_spec%s
+D s-vauspe.ads		20240801081714 89269ba5 system.value_u_spec%s
+D s-vs_int.ads		20240801081714 06b6b724 system.vs_int%s
+D s-vs_uns.ads		20240801081714 e7f47a27 system.vs_uns%s
 D s-wchcon.ads		20240801081714 d9032363 system.wch_con%s
 G a e
-G c Z b b [rvm standard 9 11 none]
+G c Z b b [rvm standard 11 11 none]
 X 1 ada.ads
-16K9*Ada 20e8 16|1r6 2r6 3r6 5r5 6r5 7r5
+16K9*Ada 20e8 19|1r6 2r6 3r6 4r6 5r6 7r5 8r5 9r5 10r5 17r34 22r34
 X 3 a-flteio.ads
-20K13*Float_Text_IO[12|46] 16|3w10 7r9
+20K13*Float_Text_IO[14|46] 19|3w10 9r9
 X 5 a-numeri.ads
-16K13*Numerics 35e17 16|2w10 6r9
-21N4*Pi 16|43r28 44r28 45r28
-X 11 a-textio.ads
-58K13*Text_IO 785e16 16|1w10 5r9
-565U14*Put_Line 16|61s9
-X 16 rvm.adb
-9U11*rvm 9b11 62l5 62t8
-10A14 F_1D_Array(float)<integer>
-11A14 F_4D_Array(float)<integer><integer><integer><integer>
-17R14 Field 33e19 35r34
-18i17 Nx{integer} 37m19
-19i17 Ny{integer} 38m19
-20i17 Nz{integer} 39m19
-21f17 Re{float} 40m19
-22f17 t{float} 41m19
-23f17 t_end{float} 42m19
-24f17 Lx{float} 43m19
-25f17 Ly{float} 44m19
-26f17 Lz{float} 45m19
-35U19 TGV 35b19 35=23 58t12
-35r23 F{17R14} 37m17 38m17 39m17 40m17 41m17 42m17 43m17 44m17 45m17
+16K13*Numerics 35e17 19|2w10 5r10 8r9 10r9
+21N4*Pi 19|127r26 128r26 129r26
+X 6 a-nuelfu.ads
+18K22*Elementary_Functions[7|39] 19|5w19 10r18
+X 7 a-ngelfu.ads
+95V13*Sin{float} 19|104s75[6|18] 104s84[6|18] 105s66[6|18] 105s84[6|18] 106s66[6|18]
+. 106s75[6|18]
+105V13*Cos{float} 19|104s66[6|18] 105s75[6|18] 106s84[6|18]
+X 13 a-textio.ads
+58K13*Text_IO 785e16 19|1w10 7r9
+565U14*Put_Line 19|115s17 116s17 117s17 118s17 119s17
+X 16 a-uncdea.ads
+17+9 Object 19|18r17 23r17
+18P9 Name(17+9) 19|19r17 24r17
+20u15*Unchecked_Deallocation 19|4w10 17r38 22r38
+X 19 rvm.adb
+11U11*rvm 11b11 136l5 136t8
+12A14 F_1D_Array(float)<integer> 14r42 18r28 52r32 53r32 54r32
+13A14 F_4D_Array(float)<integer><integer><integer><integer> 15r42 23r28 66r32
+. 67r32 68r32
+14P14 F_1D_Array_Access(12A14) 19r28 37r26 38r26 39r26
+15P14 F_4D_Array_Access(13A14) 24r28 40r26 41r26 42r26
+17U19 Free_1D[16|20] 87s17 88s17 89s17
+22U19 Free_4D[16|20] 90s17 91s17 92s17
+27R14 Field 43e19 45r47 85r45 95r45 113r37 122r19
+28i17 Nx{integer} 48r43 52r48 56r31 66r48 67r48 68r48 70r31 98r31 117r101
+. 124m11
+29i17 Ny{integer} 49r43 53r48 59r31 66r57 67r57 68r57 71r39 99r39 118r101
+. 125m11
+30i17 Nz{integer} 50r43 54r48 62r31 66r66 67r66 68r66 72r47 100r47 119r101
+. 126m11
+31f17 Re{float} 115r61 130m11
+32f17 t{float} 131m11
+33f17 t_end{float} 132m11
+34f17 Lx{float} 48r30 117r61 127m11
+35f17 Ly{float} 49r30 118r61 128m11
+36f17 Lz{float} 50r30 119r61 129m11
+37p17 Meshx{14P14} 52m19 57r27 73r70 87m27
+38p17 Meshy{14P14} 53m19 60r27 74r70 88m27
+39p17 Meshz{14P14} 54m19 63r27 75r70 89m27
+40p17 Pos{15P14} 66m19 73r43 74r43 75r43 90m27 101r54 102r54 103r54
+41p17 Velo{15P14} 67m19 77r51 91m27
+42p17 Vort{15P14} 68m19 78r51 92m27 104r43 105r43 106r43
+45U19 Initialize_Field 45b19 45=36 83l14 83t30 133s9
+45r36 F{27R14} 48r28 48r41 49r28 49r41 50r28 50r41 52m17 52r46 53m17 53r46
+. 54m17 54r46 56r29 57m25 57r25 59r29 60m25 60r25 62r29 63m25 63r25 66m17
+. 66r46 66r55 66r64 67m17 67r46 67r55 67r64 68m17 68r46 68r55 68r64 70r29
+. 71r37 72r45 73m41 73r41 73r68 74m41 74r41 74r68 75m41 75r41 75r68 77m49
+. 77r49 78m49 78r49
+46f17 Dx{float} 48m17 57r57
+46f21 Dy{float} 49m17 60r57
+46f25 Dz{float} 50m17 63r57
+56i21 I{integer} 57r33 57r50
+59i21 I{integer} 60r33 60r50
+62i21 I{integer} 63r33 63r50
+70i21 I{integer} 73r47 73r76 74r47 75r47 77r56 78r56
+71i29 J{integer} 73r49 74r49 74r76 75r49 77r58 78r58
+72i37 K{integer} 73r51 74r51 75r51 75r76 77r60 78r60
+76i45 D{integer} 77r62 78r62
+85U19 Finalize_Field 85b19 85=34 93l13 93t27
+85r34 F{27R14} 87m25 87r25 88m25 88r25 89m25 89r25 90m25 90r25 91m25 91r25
+. 92m25 92r25
+95U19 Initialize_TGV 95b19 95=34 111l13 111t27 134s9
+95r34 F{27R14} 98r29 99r37 100r45 101r52 102r52 103r52 104m41 104r41 105m41
+. 105r41 106m41 106r41
+96f17 X{float} 101m41 104r70 105r70 106r70
+96f20 Y{float} 102m41 104r79 105r79 106r79
+96f23 Z{float} 103m41 104r88 105r88 106r88
+98i21 I{integer} 101r58 102r58 103r58 104r48 105r48 106r48
+99i29 J{integer} 101r60 102r60 103r60 104r50 105r50 106r50
+100i37 K{integer} 101r62 102r62 103r62 104r52 105r52 106r52
+113U19 Field_Info 113b19 113>30 120l13 120t23 135s9
+113r30 F{27R14} 115r59 117r59 117r99 118r59 118r99 119r59 119r99
+122r9 F{27R14} 124m9 125m9 126m9 127m9 128m9 129m9 130m9 131m9 132m9 133m26
+. 133r26 134m24 134r24 135r20
 

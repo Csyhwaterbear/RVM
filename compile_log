@@ -1,0 +1,5 @@
+aarch64-linux-gnu-gcc-14 -c rvm.adb
+rvm.adb:11:11: error: cannot compile subprogram in file "rvm.adb"
+rvm.adb:11:11: error: incorrect spec in file "rvm.ads" must be removed first
+rvm.ads:47:09: error: "end record;" expected for "record" at line 33
+gnatmake: "rvm.adb" compilation error
